@@ -7,7 +7,7 @@ Script **KHÔNG CẦN KEY** - Hoạt động ngay lập tức!
 
 ## ⚡ CÀI ĐẶT NHANH (1 CLICK)
 
-**[CÀI ĐẶT NGAY](https://www.tampermonkey.net/script_installation.php#url=https://github.com/Meliodaspro/bypass-vip-rophim/raw/refs/heads/main/tampermonkey.user.js)**
+**[CÀI ĐẶT NGAY](https://www.tampermonkey.net/script_installation.php#url=https://github.com/TPIT755/bypass-rophim/raw/refs/heads/main/tampermonkey.user.js)**
 
 *(Yêu cầu đã cài Tampermonkey)*
 
