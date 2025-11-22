@@ -1,4 +1,4 @@
-# Rophim VIP Bypass - No Key Version
+# Rophim VIP Bypass - make by TPIT
 
 Script **KHÔNG CẦN KEY** - Hoạt động ngay lập tức!
 - Không cần key | Không cần Telegram | Không cần internet verify
@@ -103,6 +103,6 @@ Script được cấu hình **tự động cập nhật**:
 ## HỖ TRỢ
 
 **Tác giả gốc:** FireT (@ft_bypass)  
-**Version:** 1.6 | Modified - No Key Required  
-**Status:** Working | **Last Update:** 2025-10-15
+**Version:** 1.7.1 | Modified - No Key Required  
+**Status:** Working | **Last Update:** 2025-11-22
 
