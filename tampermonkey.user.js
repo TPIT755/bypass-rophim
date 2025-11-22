@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Rophim Full VIP By TPIT
 // @namespace    http://tampermonkey.net/
-// @version      1.7
+// @version      1.9.1
 // @description  Bypass VIP + Coin trên Rophim
 // @author       TPIT  
 // @require      https://raw.githubusercontent.com/TPIT755/bypass-rophim/refs/heads/main/Bypas-vip-rophim.js
