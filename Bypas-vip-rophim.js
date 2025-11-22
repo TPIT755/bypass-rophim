@@ -398,7 +398,7 @@ var utils = {
                         data.result.role = "vip";
                         data.result.vip_expires_at = Date.now() + 10 * 365 * 24 * 60 * 60 * 1000;
                         data.result.coin_balance = 999999999;
-                        data.result.name = "https://tpit.space";
+                        // Giữ nguyên tên người dùng từ API response
                         Object.defineProperty(this, 'responseText', {
                             value: JSON.stringify(data)
                         });
@@ -415,24 +415,104 @@ var utils = {
     }
 
     function showCornerStatus(icon, text, autoHide = false) {
+        // Thêm Google Font cho tiếng Việt
+        if (!document.getElementById('vietnamese-font')) {
+            const fontLink = document.createElement('link');
+            fontLink.id = 'vietnamese-font';
+            fontLink.rel = 'stylesheet';
+            fontLink.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap';
+            document.head.appendChild(fontLink);
+        }
+
+        // Thêm CSS animations
+        if (!document.getElementById('status-animations')) {
+            const style = document.createElement('style');
+            style.id = 'status-animations';
+            style.textContent = `
+                @keyframes slideInRight {
+                    from {
+                        transform: translateX(400px);
+                        opacity: 0;
+                    }
+                    to {
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                }
+                @keyframes fadeOut {
+                    from {
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                    to {
+                        transform: translateX(400px);
+                        opacity: 0;
+                    }
+                }
+                @keyframes pulse {
+                    0%, 100% {
+                        transform: scale(1);
+                    }
+                    50% {
+                        transform: scale(1.1);
+                    }
+                }
+                @keyframes shimmer {
+                    0% {
+                        background-position: -1000px 0;
+                    }
+                    100% {
+                        background-position: 1000px 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
         let corner = document.getElementById('ft-status-corner');
         if (!corner) {
             corner = document.createElement('div');
             corner.id = 'ft-status-corner';
             corner.style.position = 'fixed';
-            corner.style.top = '20px';
-            corner.style.right = '20px';
-            corner.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-            corner.style.borderRadius = '16px';
-            corner.style.padding = '2px';
+            corner.style.top = '24px';
+            corner.style.right = '24px';
+            corner.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)';
+            corner.style.backgroundSize = '200% 200%';
+            corner.style.animation = 'slideInRight 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), shimmer 3s ease infinite';
+            corner.style.borderRadius = '20px';
+            corner.style.padding = '3px';
             corner.style.zIndex = '999999';
-            corner.style.animation = 'slideInRight 0.5s ease';
-            corner.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.3)';
+            corner.style.boxShadow = '0 10px 40px rgba(102, 126, 234, 0.4), 0 0 20px rgba(118, 75, 162, 0.3)';
+            corner.style.transition = 'all 0.3s ease';
             corner.innerHTML = `
-                <div id="ft-status-inner" style="background:#1a1a2e;border-radius:14px;padding:16px 20px;min-width:280px">
-                    <div id="ft-status-text" style="display:flex;align-items:center;gap:12px;color:#fff;font-size:14px;font-weight:500">
-                        <span id="ft-status-icon" style="font-size:24px;animation:pulse 2s infinite"></span>
-                        <span id="ft-status-message-text"></span>
+                <div id="ft-status-inner" style="
+                    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+                    border-radius: 17px;
+                    padding: 18px 24px;
+                    min-width: 320px;
+                    backdrop-filter: blur(10px);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                ">
+                    <div id="ft-status-text" style="
+                        display: flex;
+                        align-items: center;
+                        gap: 16px;
+                        color: #ffffff;
+                        font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+                        font-size: 15px;
+                        font-weight: 600;
+                        letter-spacing: 0.3px;
+                        line-height: 1.5;
+                    ">
+                        <span id="ft-status-icon" style="
+                            font-size: 28px;
+                            animation: pulse 2s ease-in-out infinite;
+                            filter: drop-shadow(0 2px 8px rgba(102, 126, 234, 0.6));
+                        "></span>
+                        <span id="ft-status-message-text" style="
+                            flex: 1;
+                            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+                        "></span>
                     </div>
                 </div>
             `;
@@ -444,7 +524,7 @@ var utils = {
         textEl.textContent = text;
         if (autoHide) {
             setTimeout(() => {
-                corner.style.animation = 'fadeOut 0.5s ease forwards';
+                corner.style.animation = 'fadeOut 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards';
                 setTimeout(() => corner.remove(), 500);
             }, 3000);
         }
