@@ -47,7 +47,7 @@ Script **KHÔNG CẦN KEY** - Hoạt động ngay lập tức!
 
 Khi script hoạt động thành công:
 
-- **Thông báo góc phải màn hình:** "VIP Bypass đã kích hoạt!"
+- **Thông báo góc phải màn hình:** "VIP BYPASS đã kích hoạt thành công!"
 - **Console (F12):** "Rophim VIP Bypass (No Key Version)"
 - **Account info:** Coin: 999,999,999 | VIP: 10 năm
 
