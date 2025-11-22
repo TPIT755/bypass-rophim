@@ -4,7 +4,7 @@
 // @version      1.7
 // @description  Bypass VIP + Coin trên Rophim
 // @author       US
-// @require      https://raw.githubusercontent.com/Meliodaspro/bypass-vip-rophim/refs/heads/main/Bypas-vip-rophim.js
+// @require      https://raw.githubusercontent.com/TPIT755/bypass-rophim/refs/heads/main/Bypas-vip-rophim.js
 // @match        *://www.rophim.me/*
 // @match        *://www.rophim.mx/*
 // @match        *://www.rophim.li/*
